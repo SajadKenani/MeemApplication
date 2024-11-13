@@ -1,17 +1,17 @@
 # Mobile Store Application
 
 ## Overview
-This mobile store application is designed to allow users to browse products, add them to their favorites, and place orders. Orders are processed and sent to a dashboard for easy management. The system consists of a mobile app, dashboard, and server, each with specific features and functions. 
-
-- **Frontend (Mobile)**: React Native for user-facing mobile app.
-- **Frontend (Dashboard)**: React for the admin dashboard.
-- **Backend**: Golang server integrated with MySQL database.
+The Mobile Store Application enables users to browse products, add items to favorites, and place orders, which are then managed via an admin dashboard. This application is divided into three main parts:
+- **Mobile App (React Native)**: User-facing app for browsing and ordering.
+- **Admin Dashboard (React)**: Web dashboard for managing orders.
+- **Backend Server (Golang)**: Handles API requests and interacts with a MySQL database.
 
 ## Features
-- **User Authentication**: Users can sign up and sign in.
-- **Product Management**: Products can be viewed, favorited, and ordered.
-- **Order Management**: Orders placed by users are displayed in the admin dashboard.
+- **User Registration & Authentication**: Users can create accounts, log in, and log out.
+- **Product Browsing**: Users can view a list of available products with detailed information.
 - **Favorites**: Users can add products to their favorites for quick access.
+- **Order Placement**: Users can place orders, which are then sent to the admin dashboard for tracking.
+- **Admin Dashboard**: Admins can view and manage orders placed by users.
 
 ## Database Structure
 
@@ -28,14 +28,20 @@ This mobile store application is designed to allow users to browse products, add
   - `name`: String
   - `password`: String (hashed)
   - `phone`: String
-  - `favorites`: Array of Product IDs (for quick access to favorites)
+  - `favorites`: Array of Product IDs
 
 - **Orders**
   - `id`: Integer, Primary Key
-  - `product_id`: Foreign Key to Products
-  - `account_id`: Foreign Key to Accounts
-  - `product_info`: JSON (includes all relevant product details)
-  - `account_info`: JSON (includes account details relevant to the order)
+  - `product_id`: Integer, Foreign Key to Products table
+  - `account_id`: Integer, Foreign Key to Accounts table
+  - **Product Details** (Stored as separate columns, not JSON):
+    - `product_name`: String
+    - `product_price`: Float
+    - `product_description`: String
+    - `product_image`: String
+  - **Account Details**:
+    - `account_name`: String
+    - `account_phone`: String
 
 ## Technologies Used
 - **Frontend**
@@ -45,16 +51,14 @@ This mobile store application is designed to allow users to browse products, add
   - Server: Golang
   - Database: MySQL
 
-## Installation & Setup
-
-### Prerequisites
+## Prerequisites
 - Node.js and npm
 - Golang
-- MySQL Server
+- MySQL
 
-### Setup Instructions
+## Installation & Setup
 
-#### 1. Clone the Repository
+### 1. Clone the Repository
 ```bash
 git clone <repository-url>
 cd <repository-name>
