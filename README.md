@@ -11,7 +11,7 @@ The Mobile Store Application enables users to browse products, add items to favo
 - **Product Browsing**: Users can view a list of available products with detailed information.
 - **Favorites**: Users can add products to their favorites for quick access.
 - **Order Placement**: Users can place orders, which are then sent to the admin dashboard for tracking.
-- **Admin Dashboard**: Admins can view and manage orders placed by users.
+- **Admin Dashboard**: Admins can view and manage products, departments and the orders that are placed by users.
 
 ## Database Structure
 
