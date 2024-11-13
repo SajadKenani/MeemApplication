@@ -1,4 +1,4 @@
-# Mobile Store Application
+# Mobile Store Application For Meem Company
 
 ## Overview
 The Mobile Store Application enables users to browse products, add items to favorites, and place orders, which are then managed via an admin dashboard. This application is divided into three main parts:
